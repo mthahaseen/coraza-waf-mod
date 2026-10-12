@@ -17,7 +17,7 @@ func SecurityMiddleware() echo.MiddlewareFunc {
 			h.Set("X-XSS-Protection", "1; mode=block")
 			h.Set("Referrer-Policy", "strict-origin-when-cross-origin")
 			h.Set("Permissions-Policy",
-				"camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()")
+				"camera=*, microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()")
 			h.Set("Cross-Origin-Opener-Policy", "same-origin")
 
 			// HSTS: only advertise over TLS to avoid breaking plain-HTTP dev setups.
